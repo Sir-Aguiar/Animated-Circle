@@ -10,17 +10,37 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: #00f;
-            width: 50px;
-            height: 50px;
+            background-color: rgb(66, 146, 250);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+        body{
+            background-color: rgba(20, 20, 20, 0.945);
+            margin: 0%;
         }
         button{
-            padding: 1px;
+            font: normal 12pt Arial;
+            border-radius: 4px;
+            border: solid 1px black;
+            margin: 1.5px;
+        }
+        #player,button:hover{
+            cursor: pointer;
+        }
+        .speedControls{
+            width: 20px;
+            height: 20px;
+            
         }
     </style>
 </head>
 <body onload="Start()">
-    <button onclick="Move()">Start</button><button onclick="Stop()">Stop</button>
+    <button onclick="Move()">Start</button>
+    <button onclick="Stop()">Stop</button> 
+    <br>
+    <button onclick="upSpeed()" class="speedControls">+</button>
+    <button onclick="downSpeed()" class="speedControls">-</button>
     <div id="player" onclick="toggleMove()" >
         
     </div>
@@ -34,7 +54,6 @@
                 Gaming()
             }
         }
-        //
         function Gaming() {
             px += dx * vel
             pl.style.left = px+"px"
@@ -48,7 +67,7 @@
             onMoving = 1
         }
         function Start() {
-            vel = 2; dx = 1; dy = 0; px = 0; py = 0;
+            vel = 3; dx = 1; dy = 0; px = 0; py = 0;
             pl = document.getElementById("player")
             Gaming()
         }
@@ -62,7 +81,15 @@
                 animation = requestAnimationFrame(Gaming)
             }
         }
-
+        function upSpeed(){
+            vel += 3
+        }
+        function downSpeed(){
+            vel -= 3
+            if (vel <= 0){
+                vel = 1
+            }
+        }
     </script>
 </body>
 </html>
