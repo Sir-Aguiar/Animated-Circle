@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Frame</title>
+    <style>
+        #player{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(66, 146, 250);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+        body{
+            background-color: rgba(20, 20, 20, 0.945);
+            margin: 0%;
+        }
+        button{
+            font: normal 12pt Arial;
+            border-radius: 4px;
+            border: solid 1px black;
+            margin: 1.5px;
+        }
+        #player,button:hover{
+            cursor: pointer;
+        }
+        .speedControls{
+            width: 20px;
+            height: 20px;
+            
+        }
+    </style>
+</head>
+<body onload="Start()">
+    <button onclick="Move()">Start</button>
+    <button onclick="Stop()">Stop</button> 
+    <br>
+    <button onclick="upSpeed()" class="speedControls">+</button>
+    <button onclick="downSpeed()" class="speedControls">-</button>
+    <div id="player" onclick="toggleMove()" >
+        
+    </div>
+    <script src="Anim.js"></script>
+</body>
+</html>
